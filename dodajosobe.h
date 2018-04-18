@@ -1,0 +1,97 @@
+
+using namespace std;
+
+struct osoba {
+    int ID;
+    string imie;
+    string nazwisko;
+    string ulica;
+    string miasto;
+    string numerDomu;
+    string numerMieszknia;
+    string kodPocztowy;
+    string numerTelefonu;
+
+    osoba *nastepna;    // wskaŸnik na nastêpny element
+    osoba();            // konstruktor
+};
+
+osoba::osoba() {
+    nastepna = 0;       // konstruktor
+}
+
+class lista{
+public:
+    osoba *pierwsza;  // wskaŸnik na pocz¹tek listy
+    void dodaj_osobe (int ID, string imie, string nazwisko, string miasto , string ulica , string numerDomu ,string numerMieszknia,string kodPocztowy , string numerTelefonu );
+    void usun_osobe (int nr);
+    void zaladujBaze();
+    void zapisz_do_pliku();
+    void wczytaj_liste();
+    void usun_liste(osoba **head);
+    void zwroc_pierwsza();
+    lista();
+};
+
+lista::lista() {
+    pierwsza = 0;       // konstruktor
+}
+void lista::dodaj_osobe(int ID, string imie, string nazwisko, string miasto , string ulica , string numerDomu ,string numerMieszknia, string kodPocztowy , string numerTelefonu)
+{
+    osoba *nowa = new osoba;    // tworzy nowy element listy
+
+    // wype³niamy naszymi danymi
+    nowa->ID = ID;
+    nowa->imie = imie;
+    nowa->nazwisko = nazwisko;
+    nowa->miasto = miasto;
+    nowa ->ulica = ulica;
+    nowa->numerDomu=numerDomu;
+    nowa->numerMieszknia=numerMieszknia;
+    nowa->kodPocztowy = kodPocztowy;
+    nowa ->numerTelefonu = numerTelefonu;
+
+
+    if (pierwsza==0) // sprawdzamy czy to pierwszy element listy
+    {
+        // je¿eli tak to nowy element jest teraz pocz¹tkiem listy
+        pierwsza = nowa;
+    }
+
+    else
+    {
+        // w przeciwnym wypadku wêdrujemy na koniec listy
+        osoba *temp = pierwsza;
+      if(pierwsza->imie > nowa->imie)
+      {
+        nowa->nastepna = pierwsza;
+        pierwsza = nowa;
+      }else{
+        while (temp->nastepna)
+        {
+            if(temp->nastepna->imie > nowa->imie)
+            {
+                nowa->nastepna = temp->nastepna;
+                temp->nastepna = nowa;
+                break;
+
+            }else temp = temp->nastepna;
+        }
+      }
+      if (temp->nastepna == 0)
+      {
+        temp->nastepna = nowa;  // ostatni element wskazuje na nasz nowy
+        nowa->nastepna = 0;     // ostatni nie wskazuje na nic
+    }
+    }
+}
+void lista::usun_liste(osoba **head)
+{
+         osoba *tmp;
+	while (*head != NULL)
+	{
+		tmp = *head;
+		*head = (*head)->nastepna;
+		free(tmp);
+	}
+}

@@ -1,0 +1,301 @@
+object Form1: TForm1
+  Left = -8
+  Top = -8
+  Width = 1378
+  Height = 744
+  Caption = 'Ksiazka Telefoniczna'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object tytul: TLabel
+    Left = 0
+    Top = 0
+    Width = 1362
+    Height = 100
+    Align = alTop
+    Caption = '   Ksiazka Telefoniczna'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -80
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lTytulkontaktow: TLabel
+    Left = 520
+    Top = 136
+    Width = 184
+    Height = 32
+    Caption = 'Lista Kontaktow'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lImie: TLabel
+    Left = 8
+    Top = 120
+    Width = 19
+    Height = 13
+    Caption = 'Imie'
+    Visible = False
+  end
+  object lNazwisko: TLabel
+    Left = 8
+    Top = 152
+    Width = 46
+    Height = 13
+    Caption = 'Nazwisko'
+    Visible = False
+  end
+  object lMiasto: TLabel
+    Left = 8
+    Top = 184
+    Width = 31
+    Height = 13
+    Caption = 'Miasto'
+    Visible = False
+  end
+  object lUlica: TLabel
+    Left = 8
+    Top = 216
+    Width = 24
+    Height = 13
+    Caption = 'Ulica'
+    Visible = False
+  end
+  object lNumerdomu: TLabel
+    Left = 8
+    Top = 248
+    Width = 62
+    Height = 13
+    Caption = 'Numer Domu'
+    Visible = False
+  end
+  object lNumermieszkania: TLabel
+    Left = 8
+    Top = 280
+    Width = 66
+    Height = 13
+    Caption = 'Numer mieszk'
+    Visible = False
+  end
+  object lKodpocztowy: TLabel
+    Left = 8
+    Top = 312
+    Width = 67
+    Height = 13
+    Caption = 'Kod pocztowy'
+    Visible = False
+  end
+  object lNumertelefonu: TLabel
+    Left = 8
+    Top = 344
+    Width = 55
+    Height = 13
+    Caption = 'Nr Telefony'
+    Visible = False
+  end
+  object Label1: TLabel
+    Left = 280
+    Top = 120
+    Width = 19
+    Height = 13
+    Caption = 'Imie'
+  end
+  object Label2: TLabel
+    Left = 280
+    Top = 152
+    Width = 46
+    Height = 13
+    Caption = 'Nazwisko'
+  end
+  object Label3: TLabel
+    Left = 280
+    Top = 184
+    Width = 31
+    Height = 13
+    Caption = 'Miasto'
+  end
+  object Label4: TLabel
+    Left = 280
+    Top = 216
+    Width = 24
+    Height = 13
+    Caption = 'Ulica'
+  end
+  object Label5: TLabel
+    Left = 280
+    Top = 248
+    Width = 60
+    Height = 13
+    Caption = 'Numer domu'
+  end
+  object Label6: TLabel
+    Left = 280
+    Top = 280
+    Width = 86
+    Height = 13
+    Caption = 'Numer mieszkania'
+  end
+  object Label7: TLabel
+    Left = 280
+    Top = 312
+    Width = 67
+    Height = 13
+    Caption = 'Kod pocztowy'
+  end
+  object Label8: TLabel
+    Left = 280
+    Top = 344
+    Width = 49
+    Height = 13
+    Caption = 'Numer Tel'
+  end
+  object pZaladuj: TButton
+    Left = 8
+    Top = 552
+    Width = 433
+    Height = 49
+    Caption = 'Za'#322'aduj Liste'
+    TabOrder = 0
+    OnClick = pZaladujClick
+  end
+  object pWyjscie: TButton
+    Left = 8
+    Top = 616
+    Width = 433
+    Height = 49
+    Caption = 'Wyjscie'
+    TabOrder = 1
+    OnClick = pWyjscieClick
+  end
+  object ListBox1: TListBox
+    Left = 480
+    Top = 176
+    Width = 273
+    Height = 497
+    ItemHeight = 13
+    TabOrder = 2
+    OnClick = ListBox1Click
+  end
+  object pUsun: TButton
+    Left = 8
+    Top = 488
+    Width = 433
+    Height = 49
+    Caption = 'Usun Osobe'
+    TabOrder = 3
+    OnClick = pUsunClick
+  end
+  object pDodaj: TButton
+    Left = 8
+    Top = 424
+    Width = 433
+    Height = 49
+    Caption = 'Dodaj'
+    TabOrder = 4
+    OnClick = pDodajClick
+  end
+  object bMaledodaj: TButton
+    Left = 8
+    Top = 376
+    Width = 105
+    Height = 25
+    Caption = 'Dodaj'
+    TabOrder = 5
+    Visible = False
+    OnClick = bMaledodajClick
+  end
+  object eImie: TEdit
+    Left = 88
+    Top = 120
+    Width = 145
+    Height = 21
+    TabOrder = 6
+    Visible = False
+  end
+  object eNazwisko: TEdit
+    Left = 88
+    Top = 152
+    Width = 145
+    Height = 21
+    TabOrder = 7
+    Visible = False
+  end
+  object eMiasto: TEdit
+    Left = 88
+    Top = 184
+    Width = 145
+    Height = 21
+    TabOrder = 8
+    Visible = False
+  end
+  object eUlica: TEdit
+    Left = 88
+    Top = 216
+    Width = 145
+    Height = 21
+    TabOrder = 9
+    Visible = False
+  end
+  object eNumerdomu: TEdit
+    Left = 88
+    Top = 248
+    Width = 145
+    Height = 21
+    TabOrder = 10
+    Visible = False
+  end
+  object eNumermieszkania: TEdit
+    Left = 88
+    Top = 280
+    Width = 145
+    Height = 21
+    TabOrder = 11
+    Visible = False
+  end
+  object eKodpocztowy: TEdit
+    Left = 88
+    Top = 312
+    Width = 145
+    Height = 21
+    TabOrder = 12
+    Visible = False
+  end
+  object eNumertelefonu: TEdit
+    Left = 88
+    Top = 344
+    Width = 145
+    Height = 21
+    TabOrder = 13
+    Visible = False
+  end
+  object bEdycja: TButton
+    Left = 392
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Edytuj'
+    TabOrder = 14
+    OnClick = bEdycjaClick
+  end
+  object bZakonczedycje: TButton
+    Left = 144
+    Top = 376
+    Width = 89
+    Height = 25
+    Caption = 'Zakoncz edycje'
+    TabOrder = 15
+    Visible = False
+    OnClick = bZakonczedycjeClick
+  end
+end
